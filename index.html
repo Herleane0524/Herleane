@@ -22,6 +22,167 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            background-color: black;
+        }
+       
+
+        nav {
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            top: 0;
+            width: 100%;
+            color: white;
+            font-size: larger;
+            padding: 10px 20px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .nav_head {
+            font-size: 35px;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        li a {
+            padding: 15px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        li a:hover {
+            color: #ED2279;
+        }
+
+        .contact_btn {
+            padding: 10px 30px;
+            color: black;
+            margin-left: 2rem;
+            background-color: #ED2279;
+            border-radius: 30px;
+            font-size: large;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+        }
+
+        .contact_btn:hover {
+            color: white;
+            border: 3px solid #ED2279;
+            background: transparent;
+        }
+
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            display: none; /* Initially hidden for larger screens */
+        }
+
+        .checkbox {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .checkbtn {
+                display: block;
+            }
+
+            ul {
+                position: fixed;
+                right: -100%;
+                top: 60px;
+                flex-direction: column;
+                width: 70%;
+                height: calc(100vh - 60px);
+                background-color: black;
+                padding: 20px;
+                transition: right 0.5s;
+                z-index: 999;
+            }
+
+            .checkbox:checked ~ ul {
+                right: 0;
+            }
+
+            li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .contact_btn {
+                width: 100%;
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            .nav_head {
+                font-size: 30px;
+            }
+        }
+        
+        
+        
+        
+        .home{
+        padding: 220px 100px;
+        color: white;
+        diplay: flex;
+        justify-content: space-around;
+        gap: 5rem;
+        }
+        .description{
+        padding-top: 20px;
+        
+        }
+        .description h1{
+        font-size: 30px;
+        font-weight: 700;
+        }
+        .description h1 span{
+        color: #ED2279;
+        font-size: 55px;
+        }
+        .description h2{
+        margin-top: 20px;
+        font-size: 30px;
+        font-weight:900;
+        }
+        .description h2 span{
+        color: #ED2279;
+        position: relative;
+        }
+        .description h2 span:after{
+        content: "";
+        position: absolute;
+        left:0;
+        right: 0px;
+        height: 100%;
+        border-left: 4px solid #ED2279;
+        background-color: rgb(21,21,21);
+        }
+
+
+
+        
     body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -151,6 +312,40 @@
    </style>
 </head>
 <body>
+<nav>
+        <input type="checkbox" class="checkbox" id="check">
+        <h1 class="nav_head">Herleane</h1>
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="friend.html">Friends</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="contact_btn">Contact Me</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" class="home">
+    <img src="herleane.jpg" alt="" width="300px" height="300px">
+    <div class="description">
+    <h1>Hello I'm <br><span>Herleane Mae Pancho</span></h1>
+    <h2>I am a <span> 4th Year College Student</span></h2>
+    <p>taking Bachelor of Science in Information Technology at Northern Iloilo State University, Estancia, Iloilo</p>
+    <div class="font">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fas fa-phone"></i>
+    </div>
+   
+    <a href="https://www.nisu.edu.ph/index.php/academics/college-of-information-and-computing-studies" ><button>NISU CICS</button></a>
+    
+    </div>
+    </section>
+    
     <header>
         <nav>
             <ul>
